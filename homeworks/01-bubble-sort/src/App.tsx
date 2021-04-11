@@ -1,6 +1,5 @@
 import React from 'react';
 import {sort} from "./utils/Sort";
-// import {checkFinishSort} from "./utils/CheckFinishSort";
 import Chart from "./components/Chart/Chart";
 import './App.css';
 import Header from './components/Header/Header';
@@ -28,6 +27,7 @@ class App extends React.Component<{}, stateType> {
             randomArray.push(Math.round(Math.random() * 200))
         }
         this.setState({arr: randomArray})
+        this.setState({iteration: 20})
     }
 
         startSort = () => {
@@ -37,7 +37,7 @@ class App extends React.Component<{}, stateType> {
         let sortedArr: arrayType = []
         let timerId = setInterval(() => {
             intervalSort()
-        }, 500)
+        }, 300)
 
 
         let intervalSort = ():void => {
