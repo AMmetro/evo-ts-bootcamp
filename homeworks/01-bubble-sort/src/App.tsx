@@ -7,7 +7,7 @@ import Header from './components/Header/Header';
 import Footer from "./components/Footer/Footer";
 
 export type arrayType = number[]
-export type stateType = { arr: arrayType, status: string }
+export type stateType = { arr: arrayType, status: string, iteration: number}
 
 
 class App extends React.Component<{}, stateType> {
@@ -15,7 +15,7 @@ class App extends React.Component<{}, stateType> {
     constructor(props: any) {
         super(props);
 
-        this.state = {arr: [], status: "Not solved"};
+        this.state = {arr: [], status: "Not solved", iteration: 20};
     }
 
     componentDidMount = () => {
@@ -33,8 +33,8 @@ class App extends React.Component<{}, stateType> {
         startSort = () => {
         this.setState({status: "in progress"})
         let copyArray = [...this.state.arr]
-        let sortedArr: arrayType = []
 
+        let sortedArr: arrayType = []
         let timerId = setInterval(() => {
             intervalSort()
         }, 500)
@@ -42,16 +42,15 @@ class App extends React.Component<{}, stateType> {
 
         let intervalSort = ():void => {
             sortedArr = sort(copyArray)
-                  if (copyArray.reduce((acc, el, ind) =>{
-                    return ( sortedArr[ind] === el ? true : false)
-                    }, true)) {
 
-                        clearTimeout(timerId);
-                        this.setState({status: "Solved"})
-                    }
-
-
+            let currentIteration=this.state.iteration-1
             this.setState({arr: sortedArr})
+            this.setState({iteration: currentIteration})
+
+            if (currentIteration==0) {
+                       clearTimeout(timerId);
+                       this.setState({status: "Solved"})
+            }
         }
     }
 
