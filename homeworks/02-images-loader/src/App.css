@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+}
+
+.header{
+  margin-top:20px;
+  grid-column: 2/2;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+
+.image_container{
+  margin-top: 20px;
+  border: 1px solid green;
+  min-height: 100px;
+  display: flex;
+  grid-column: 2/2;
+
+}
+
