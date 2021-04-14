@@ -1,0 +1,23 @@
+// type checkFinishSortType = {sortedArr:number[], copyArray:number[]}
+//
+// export const checkFinishSort=(sortedArr, copyArray):checkFinishSortType=>{
+//
+//     if (copyArray.reduce((acc, el, ind) =>{
+//         console.log("iteration " + ind)
+//         return ( sortedArr[ind] === el ? acc : false)
+//         }, true)) {
+//
+//         console.log("end")
+//         clearTimeout(timerId);
+//         this.setState({status: "Solved"})
+//     }
+//
+//
+// }
+
+
+
+
+
+
+
