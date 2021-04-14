@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/evo/static/css/main.b4537786.chunk.css",
+    "main.js": "/evo/static/js/main.7dde4bc8.chunk.js",
+    "main.js.map": "/evo/static/js/main.7dde4bc8.chunk.js.map",
+    "runtime-main.js": "/evo/static/js/runtime-main.61d55aa7.js",
+    "runtime-main.js.map": "/evo/static/js/runtime-main.61d55aa7.js.map",
+    "static/js/2.7f8051b2.chunk.js": "/evo/static/js/2.7f8051b2.chunk.js",
+    "static/js/2.7f8051b2.chunk.js.map": "/evo/static/js/2.7f8051b2.chunk.js.map",
+    "static/js/3.5dd65715.chunk.js": "/evo/static/js/3.5dd65715.chunk.js",
+    "static/js/3.5dd65715.chunk.js.map": "/evo/static/js/3.5dd65715.chunk.js.map",
+    "index.html": "/evo/index.html",
+    "static/css/main.b4537786.chunk.css.map": "/evo/static/css/main.b4537786.chunk.css.map",
+    "static/js/2.7f8051b2.chunk.js.LICENSE.txt": "/evo/static/js/2.7f8051b2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.61d55aa7.js",
+    "static/js/2.7f8051b2.chunk.js",
+    "static/css/main.b4537786.chunk.css",
+    "static/js/main.7dde4bc8.chunk.js"
+  ]
+}
