@@ -5,17 +5,30 @@ import {imagesAPI} from "../src/API/ImagesAPI"
 import './App.css';
 
 
-export type stateType = {searchTxt: string, imgPride:any }
+interface incomImageArray {
+    id: string;
+    alt_description: string;
+    width: number;
+    height: number;
+    urls: {
+        [key: string]: string;
+    };
+}
+
+type imgPride={
+    id: string,
+    src: string,
+    alt: string,
+    width: string,
+    height: string}
+
+type stateType = {searchTxt: string, imgPride:imgPride[] }
+
 
 class App extends React.Component<{}, stateType> {
 
-    constructor(props: any) {
-        super(props);
-        this.state = {searchTxt: "car", imgPride:[]};
-         }
 
-    componentDidMount = () => {
-    }
+     state = {searchTxt: "", imgPride:[]};
 
       setInputTxt = (inputTxt:string)=>{
        this.setState({searchTxt: inputTxt})
@@ -23,9 +36,20 @@ class App extends React.Component<{}, stateType> {
 
      submitSearch =()=>{
           imagesAPI.getPhotos(this.state.searchTxt)
-              .then((response)=>
-                  this.setState({imgPride: response.data})
-              )
+          .then((data) => {
+
+              if (data==undefined){ this.setState({imgPride:[]})}
+              else {
+                  const imgPride = data.map((image:incomImageArray) => ({
+                      id: image.id,
+                      src: image.urls.small,
+                      alt: image.alt_description,
+                      width: image.width,
+                      height: image.height
+                  }))
+                  this.setState({imgPride: imgPride})
+              }
+          })
          }
 
 
@@ -33,9 +57,7 @@ class App extends React.Component<{}, stateType> {
     render() {
 
            return (
-
             <div className="App">
-
                 <header className={"header"}>
                     <Search
                     setInputTxt={this.setInputTxt}
@@ -43,11 +65,9 @@ class App extends React.Component<{}, stateType> {
                     submitSearch={this.submitSearch}
                     />
                 </header>
-
                 <div className={"image_container"}>
                    <Images imgPride={this.state.imgPride} />
                 </div>
-
             </div>
         );
     }

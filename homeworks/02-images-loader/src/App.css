@@ -14,9 +14,6 @@
 
 .image_container{
   margin-top: 20px;
-  min-height: 100px;
-  display: flex;
   grid-column: 2/2;
-
 }
 

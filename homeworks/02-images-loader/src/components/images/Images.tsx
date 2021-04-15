@@ -1,21 +1,29 @@
 import React from 'react';
 import sss from '../images/Images.module.css'
 
-type ImagesProps = { imgPride?: any }
+type imgPride={
+    id: string,
+    src: string,
+    alt: string,
+    width: string,
+    height: string}
 
+    type ImagesProps = { imgPride?: imgPride}
 
 function Images(props: ImagesProps) {
 
 
     return (
-        <div className={sss.imgContainer}>
+        <div className={sss.image_box}>
             {
-
-                props.imgPride.results &&
-                //@ts-ignore
-                props.imgPride.results.map(el =>
-                     <img className={sss.image_item} src={el.links.download}/>
-
+                props.imgPride &&
+                props.imgPride.map(el =>
+                    <div id={el.id}>
+                    <img className={sss.image_item}
+                          src={el.src}
+                          alt={el.alt}
+                     />
+                    </div>
                 )
             }
         </div>

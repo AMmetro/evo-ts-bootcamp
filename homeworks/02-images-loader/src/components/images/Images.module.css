@@ -1,10 +1,17 @@
 
 .image_item{
-    width: 200px;
-    height: 200px;
-    margin: 10px;
+    height: 100px;
+    width: 100px;
+    margin-left: 2px;
+    transition: transform 0.3s;
+}
+
+.image_item:hover{
+    transform: scale(1.1)
 }
 
 .image_box{
     display: flex;
+    flex-wrap: wrap;
 }
+
